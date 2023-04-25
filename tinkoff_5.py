@@ -79,11 +79,12 @@ def sum_chlen(k):  # Naidem summu chlena
     print('0000000000 len(k), k',len(k),  k)# 0000000000 k ([[(-1, [1, 2, -3, 6]), (-1, [2, -3, 6]), (-1, [-3, 6]), (-1, [6]), (-1, [1, 2, -3]), (-1, [2, -3]), (-1, [-3]), (-1, [1, 2]), (-1, [2]), (-1, [1])], [(1, [2, -3, 6]), (1, [-3, 6]), (1, [6]), (1, [2, -3]), (1, [-3]), (1, [2])], [(2, [-3, 6]), (2, [6]), (2, [-3])], [(-3, [6])], []],)
 
     for i in k:
+        index = 0
         print('+++++++++++++++ i', i)
 
         while index < len(i):
-            while index == len(i):
-                index = 0
+            # while index == len(i):
+            #     index = 0
             lst.append(sum_tupl(i[index]))
             print(lst)
             print(index)
