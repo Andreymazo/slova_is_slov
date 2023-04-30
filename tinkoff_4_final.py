@@ -16,7 +16,6 @@ def unik(k):
 
 ############################### Naidem kol idushih podryad povtorov elementa x v spisle lst i index povtora, zanesem v spisok lst_fin##
 
-
 def povt(x, lst):
     lst1 = []
     lst_fin = []
@@ -40,7 +39,6 @@ def povt(x, lst):
                 if i == x:
                     lst_fin.append((x, lst1))
 
-                    # print('lst_fin', lst_fin)
                     break
                 if i != x:
                     lst_fin.append((x, lst1))
@@ -125,22 +123,16 @@ def max_len(k):
     return total
 
 
-# max_len([(3, [(3, 0), (3, 1)]), (3, [(3, 3), (3, 4), (3, 5)])])
-
-
 ########### Naidem max paru dlin znacheniya idushego v spiske 1m elementom ##################
 def max_para(kk):  # [1, 2, 3, 1, 2, 2, 3, 3, 3, 1, 4, 4, 5]
 
     ######################## Sformiruem spisok iz kolichestv povtorov i True False - est vozmozhnost skladivat ili net ############
-    lst1 = []
+
     lst_par = []
-    index = 0
-    # print(kk)
     k = kk
     fin = []
     for i in range(len(kk)):
         x = kk[i]
-        # print(i)
         k.pop(i)
         k.insert(i, None)
 
@@ -158,7 +150,7 @@ start = time.time()
 # max_para([1, 2, 3, 1, 2, 2, 3, 3, 3, 1, 4, 4, 5])#10
 # max_para([1, 2, 4, 2, 3, 1, 3, 9, 15, 23])  # 7
 # max_para([3, 3, 4, 3, 3, 3, 4, 4, 4, 3, 2, 2, 1])
-max_para([1, 2, 3, 1, 2, 2, 3, 3, 3, 1, 4, 4, 5, 5, 7, 7])#10
+max_para([1, 2, 3, 1, 2, 2, 3, 3, 3, 1, 4, 4, 5, 5, 7, 7])  # 10
 # max_para([11,1,2,4,2,3,1, 3,9, 15,23])
 # max_para([1,3,1,2,3,1,2])# [1, 5, 14, 2, 3, 1, 2])  # )
 # max_para([1, 5, 14, 2, 3, 1, 2])#5 dolzhno bit 4
