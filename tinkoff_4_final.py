@@ -16,39 +16,7 @@ def unik(k):
 
 ############################### Naidem kol idushih podryad povtorov elementa x v spisle lst i index povtora, zanesem v spisok lst_fin##
 
-def max_podryadidush(x, lst):  # Вместо каунт нам нужен новый метод каунт, считает только максимальное вподряд идущ
 
-    dicc = {}
-    index = 0
-    index1 = 0
-
-    while index <= len(lst) - 1:
-
-        if lst[index] != x:
-            index += 1
-            index1 = 0
-            if index == len(lst) - 1:
-                break
-
-        if not dicc.get(x):
-            dicc.update({x: index1})
-
-        if lst[index] == x and index1 <= dicc.get(x):
-            index += 1
-            index1 += 1
-            print('+++++++++++__________________', index1, dicc.get(x), index)
-            if index1 > dicc.get(x):
-                dicc.update({x: index1})
-
-        elif lst[index] == x and index1 > dicc.get(x):
-            index += 1
-            dicc.update({x: index1})
-
-    res = dicc.get(x)
-    return res
-
-
-##############################################################3
 def povt(x, lst):
     lst1 = []
     lst_fin = []
@@ -179,8 +147,6 @@ def max_para(kk):  # [1, 2, 3, 1, 2, 2, 3, 3, 3, 1, 4, 4, 5]
         for j in unik(povtor_none(kk)):
             fin.append(max_len(povt(j, povtor_none(
                 kk))))  # [(3, [(3, 0), (3, 1), (3, 2), (3, 3), (3, 4), (3, 5), (3, 6), (3, 7), (3, 8), (3, 9)])]
-            # fin.append(max_podryadidush(j, povtor_none(
-            #     kk)))  # [(3, [(3, 0), (3, 1), (3, 2), (3, 3), (3, 4), (3, 5), (3, 6), (3, 7), (3, 8), (3, 9)])]
         kk[i] = x
 
         lst_par = max(fin)
@@ -190,9 +156,9 @@ def max_para(kk):  # [1, 2, 3, 1, 2, 2, 3, 3, 3, 1, 4, 4, 5]
 start = time.time()
 
 # max_para([1, 2, 3, 1, 2, 2, 3, 3, 3, 1, 4, 4, 5])#10
-max_para([1, 2, 4, 2, 3, 1, 3, 9, 15, 23])  # 7
+# max_para([1, 2, 4, 2, 3, 1, 3, 9, 15, 23])  # 7
 # max_para([3, 3, 4, 3, 3, 3, 4, 4, 4, 3, 2, 2, 1])
-# max_para([1, 2, 3, 1, 2, 2, 3, 3, 3, 1, 4, 4, 5, 5, 7, 7])#10
+max_para([1, 2, 3, 1, 2, 2, 3, 3, 3, 1, 4, 4, 5, 5, 7, 7])#10
 # max_para([11,1,2,4,2,3,1, 3,9, 15,23])
 # max_para([1,3,1,2,3,1,2])# [1, 5, 14, 2, 3, 1, 2])  # )
 # max_para([1, 5, 14, 2, 3, 1, 2])#5 dolzhno bit 4
